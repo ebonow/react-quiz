@@ -1,0 +1,235 @@
+.App {
+    text-align: center;
+    color: #3f3f3f;
+}
+
+.App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+}
+
+.App-header {
+    background-color: #222;
+    height: 150px;
+    padding: 20px;
+    color: white;
+}
+
+.App-intro {
+    font-size: large;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes delayFadeOutUp {
+    from, 50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(1.5);
+    }
+}
+
+section {
+    margin: 20px auto;
+    width: 600px;
+}
+
+.overviewSection {
+    border: 1px solid #abc;
+    border-radius: 2px;
+    margin: 20px auto;
+    padding: 10px;
+    text-align: center;
+    width: 500px;
+}
+    .overviewSection > * {
+        margin: 10px;
+    }
+
+    .overviewSection img {
+        width: 100%;
+    }
+
+    .overviewSection .description {
+        font-size: 18px;
+        text-align: justify;
+    }
+
+    .overviewSection button {
+        padding: 10px;
+    }
+
+.transitionOut .question {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-name: delayFadeOutUp;
+}
+
+.quizSection .questionNumber {
+    font-weight: bold;
+    text-align: right;
+    font-size: 16px;
+    line-height: .5em;
+}
+
+.quizSection .question {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 10px auto 20px;
+}
+
+.quizSection .answers p {
+    -webkit-perspective: 800px;
+    -moz-perspective: 800px;
+    perspective: 800px;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+button {
+    width: 160px;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: #ccc;
+    cursor: pointer;
+    padding: 25px 0;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    transform-style: preserve-3d;
+    text-align: center;
+}
+
+    .quizSection .answers button:before {
+        content: 'Incorrect!';
+        top: 100%;
+        background: #e96a6a;
+        color: #a33a3a;
+        font-weight: 700;
+        transform-origin: 0% 0%;
+        transform: rotateX(-90deg);
+    }
+
+    .quizSection .answers button:after {
+        content: 'Correct!';
+        top: -98%;
+        background: #7aca7c;
+        color: #358337;
+        transform-origin: 0% 100%;
+        transform: rotateX(90deg);
+    }
+
+    .quizSection .answers button.correct {
+        background: #aaa;
+        transform-origin: 50% 100%;
+        transform: rotateX(-90deg) translateY(100%);
+    }
+
+    .quizSection .answers button.incorrect {
+        background: #aaa;
+        transform-origin: 50% 0%;
+        transform: rotateX(90deg) translateY(-100%);
+    }
+
+.resultsSection {
+    text-align: center;
+}
+
+    .resultsSection h2 {
+        text-align: left;
+        border-bottom: 1px solid;
+    }
+
+    .resultsSection .scoring {
+        text-align: left;
+        margin-top: -8px;
+    }
+
+    .resultsSection .result {
+        text-align: left;
+        position: relative;
+        margin: 50px 0;
+    }
+
+    .resultsSection .question {
+        font-weight: bold;
+    }
+
+    .resultsSection .response {
+        margin: 10px 0;
+        color: #676767;
+    }
+
+    .resultsSection .result:before {
+        font-size: 2em;
+        position: absolute;
+        left: -50px;
+    }
+
+    .resultsSection .result.correct:before {
+        content: '\002714';
+        color: #7aca7c;
+        top: -20px;
+    }
+
+    .resultsSection .result.incorrect:before {
+        content: '\2716';
+        color: #e96a6a;
+        top: -18px;
+    }
+
+        .resultsSection .response b {
+            color: #545454;
+            font-size: 1.1em;
+        }
+
+    .resultsSection .explanation {
+        font-size: 1.1em;
+        margin-bottom: 20px;
+    }
+
+    .resultsSection .badge {
+        background-repeat: no-repeat;
+        display: inline-block;
+        margin: 10px auto;
+        text-align: center;
+        font-size: 3em;
+        color: white;
+        text-shadow: 0 0 5px black;
+        border: 14px solid #205;
+        border-radius: 100%;
+        background-position: center center;
+        box-shadow: 5px 5px 15px black;
+    }
+
+button:after, button:before {
+    text-transform: uppercase;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    line-height: 70px;
+}
+
+    button:hover {
+        box-shadow: inset 0 0 10px;
+    }
